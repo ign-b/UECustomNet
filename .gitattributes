@@ -1,0 +1,41 @@
+[attr]lock filter=lfs diff=lfs merge=binary -text lockable
+[attr]lockonly lockable
+[attr]lfs filter=lfs diff=lfs merge=binary -text
+[attr]lfstext filter=lfs diff=lfstext merge=lfstext -text
+
+# Unreal Engine files
+*.uasset lock
+*.umap lock
+*.locmeta lfs
+*.locres lfs
+
+# Binary files
+*.dll lfs
+*.exe lfs
+*.rcc lfs
+
+# Font files
+*.eot lfs
+*.ttf lfs
+*.woff lfs
+*.woff2 lfs
+
+# Music files
+*.flac lfs
+*.mp3 lfs
+*.ogg lfs
+*.wav lfs
+
+# Icon files
+*.icns lfs
+*.ico lfs
+*.jpg lfs
+*.png lfs
+
+# Movies
+*.avi lfs
+*.bk2 lfs
+*.mkv lfs
+*.mov lfs
+*.mp4 lfs
+*.wmv lfs

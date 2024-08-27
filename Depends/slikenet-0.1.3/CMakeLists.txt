@@ -1,0 +1,18 @@
+project(slikenet)
+
+file(GLOB_RECURSE SLIKENET_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+file(GLOB_RECURSE SLIKENET_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h)
+
+add_library(${PROJECT_NAME} STATIC ${SLIKENET_SOURCES} ${SLIKENET_HEADERS})
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+if(WIN32)
+    target_link_libraries(${PROJECT_NAME} ws2_32)
+endif()
+
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_NAME}_${CMAKE_SYSTEM_PROCESSOR}_$<CONFIG>")
+
+install(TARGETS ${PROJECT_NAME}
+    ARCHIVE DESTINATION lib
+)
